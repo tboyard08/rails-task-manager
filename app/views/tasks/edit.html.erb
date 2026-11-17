@@ -1,0 +1,16 @@
+<h1>Edit task</h1>
+
+Title:
+<input type ="text" value="<%= @task.title %>"><br>
+Details:
+<input type ="text" value="<%= @task.details %>"><br>
+
+<input type="checkbox" <%= "checked" if @task.completed %>>
+<% if @task.completed %>
+  This task is completed
+<% else %>
+This task is not completed
+<% end %>
+
+<br><br>
+<%= link_to 'Back to list', index_path %>
