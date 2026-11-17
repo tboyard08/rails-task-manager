@@ -4,10 +4,14 @@
     <li>
       <input type="checkbox" <%= "checked" if task.completed %>>
 
-      <%= link_to task.title, show_path(task.id)  %>
+      <%= link_to task.title, task_path(task.id)  %> |
+      <%= link_to "Delete",
+        task_path(task),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
     </li>
   <% end %>
 </ul>
 
 <br><br>
-<%= link_to 'Add a new task', index_path %>
+<%= link_to 'Add a new task', new_task_path %>
